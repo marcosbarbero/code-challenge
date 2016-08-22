@@ -13,6 +13,10 @@ CREATE TABLE wallethub.votes ( name CHAR(10), votes INT );
 INSERT INTO wallethub.votes VALUES
  ('Smith',10), ('Jones',15), ('White',20), ('Black',40), ('Green',50), ('Brown',20);
 
+
+-- -----------------------------------------------------------------------
+-- Solution
+-- -----------------------------------------------------------------------
 SELECT
   @curRank := @curRank + 1 AS rank,
   v.name AS name,

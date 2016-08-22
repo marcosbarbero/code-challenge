@@ -14,6 +14,9 @@ CREATE TABLE wallethub.sometbl ( ID INT, NAME VARCHAR(50) );
 INSERT INTO wallethub.sometbl VALUES (1, 'Smith'), (2, 'Julio|Jones|Falcons'), (3,
 'White|Snow'), (4, 'Paint|It|Red'), (5, 'Green|Lantern'), (6, 'Brown|bag');
 
+-- -----------------------------------------------------------------------
+-- Create the procedure to explode the column into rows
+-- -----------------------------------------------------------------------
 DROP PROCEDURE IF EXISTS explode_table;
 
 DELIMITER ||
@@ -79,4 +82,7 @@ END ||
 
 DELIMITER ;
 
+-- -----------------------------------------------------------------------
+-- Call the procedure setting the delimiter on column
+-- -----------------------------------------------------------------------
 CALL explode_table('|');

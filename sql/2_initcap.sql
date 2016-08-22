@@ -8,6 +8,10 @@
 CREATE SCHEMA IF NOT EXISTS wallethub;
 USE wallethub;
 
+-- -----------------------------------------------------------------------
+-- Create the function to capitalize the initial letter
+-- -----------------------------------------------------------------------
+
 DROP FUNCTION IF EXISTS initcap;
 
 DELIMITER ||
@@ -45,4 +49,8 @@ END ||
 
 DELIMITER ;
 
+
+-- -----------------------------------------------------------------------
+-- Execute the function
+-- -----------------------------------------------------------------------
 SELECT initcap('UNITED states Of AmERIca ');
