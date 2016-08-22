@@ -14,10 +14,10 @@ INSERT INTO wallethub.votes VALUES
  ('Smith',10), ('Jones',15), ('White',20), ('Black',40), ('Green',50), ('Brown',20);
 
 SELECT
-	   @curRank := @curRank + 1 AS rank,
-     v.name AS name,
-	   v.votes AS votes
+  @curRank := @curRank + 1 AS rank,
+  v.name AS name,
+  v.votes AS votes
 FROM
-	wallethub.votes AS v,
-    (SELECT @curRank := 0) AS r
+  wallethub.votes AS v,
+  (SELECT @curRank := 0) AS r
 ORDER BY v.votes DESC;
